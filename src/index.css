@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Adventure Platform Design System - All colors MUST be HSL */
+
+@layer base {
+  :root {
+    /* Adventure Color Palette - Updated Brand Colors */
+    --background: 42 78% 92%; /* Cream background */
+    --foreground: 202 100% 14%; /* Deep Blue for primary text */
+
+    --card: 42 78% 92%; /* Cream for cards */
+    --card-foreground: 202 100% 14%; /* Deep Blue for card text */
+
+    --popover: 42 78% 92%; /* Cream for popovers */
+    --popover-foreground: 202 100% 14%; /* Deep Blue for popover text */
+
+    /* Deep Blue Primary */
+    --primary: 202 100% 14%; /* Deep Blue for primary elements */
+    --primary-foreground: 42 78% 92%; /* Cream text on deep blue */
+    --primary-glow: 202 100% 20%; /* Slightly lighter deep blue */
+
+    /* Steel Blue Secondary */
+    --secondary: 202 40% 57%; /* Steel Blue for secondary elements */
+    --secondary-foreground: 42 78% 92%; /* Cream text on steel blue */
+
+    /* Neutral tones for muted elements */
+    --muted: 42 20% 85%; /* Light cream for muted backgrounds */
+    --muted-foreground: 202 40% 40%; /* Darker steel blue for muted text */
+
+    --accent: 202 40% 57%; /* Steel Blue for accents */
+    --accent-foreground: 42 78% 92%; /* Cream text on accent */
+
+    --destructive: 353 82% 42%; /* Red for destructive actions */
+    --destructive-foreground: 42 78% 92%; /* Cream text on red */
+
+    /* Action Colors for Buttons */
+    --action-primary: 0 100% 23%; /* Maroon for primary action buttons */
+    --action-secondary: 353 82% 42%; /* Red for secondary action buttons */
+    --action-primary-foreground: 42 78% 92%; /* Cream text on action buttons */
+    --action-secondary-foreground: 42 78% 92%; /* Cream text on secondary actions */
+
+    --border: 202 30% 80%; /* Light blue-gray for borders */
+    --input: 42 50% 88%; /* Light cream for inputs */
+    --ring: 0 100% 23%; /* Maroon for focus rings */
+
+    --radius: 0.75rem;
+
+    /* Adventure Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(202 100% 14%), hsl(202 40% 57%));
+    --gradient-card: linear-gradient(145deg, hsl(42 78% 92%), hsl(42 50% 88%));
+    --gradient-button: linear-gradient(135deg, hsl(0 100% 23%), hsl(353 82% 42%));
+    
+    /* Adventure Shadows */
+    --shadow-adventure: 0 10px 40px -10px hsl(0 100% 23% / 0.3);
+    --shadow-card: 0 8px 32px -8px hsl(202 100% 14% / 0.1);
+    --shadow-glow: 0 0 50px hsl(0 100% 23% / 0.5);
+
+    /* Sidebar Adventure Theme */
+    --sidebar-background: 202 100% 14%; /* Deep Blue sidebar */
+    --sidebar-foreground: 42 78% 92%; /* Cream sidebar text */
+    --sidebar-primary: 0 100% 23%; /* Maroon for sidebar primary */
+    --sidebar-primary-foreground: 42 78% 92%; /* Cream on maroon */
+    --sidebar-accent: 202 40% 57%; /* Steel Blue for sidebar accent */
+    --sidebar-accent-foreground: 42 78% 92%; /* Cream on steel blue */
+    --sidebar-border: 202 80% 20%; /* Darker blue for sidebar border */
+    --sidebar-ring: 0 100% 23%; /* Maroon for sidebar focus */
+
+    /* Animations */
+    --transition-adventure: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    /* Adventure platform uses consistent dark theme */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Adventure animations */
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+    to {
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+    }
+  }
+
+  .hero-bg {
+    background: var(--gradient-hero);
+  }
+
+  .card-bg {
+    background: var(--gradient-card);
+  }
+
+  .button-gradient {
+    background: var(--gradient-button);
+  }
+}
